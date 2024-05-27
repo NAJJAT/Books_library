@@ -1,4 +1,4 @@
-package be.ehb.project.Controller;
+package be.ehb.project.Repositroy;
 
 import be.ehb.project.model.Loans;
 import org.springframework.data.repository.CrudRepository;

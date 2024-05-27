@@ -1,13 +1,14 @@
 package be.ehb.project.Controller;
 
 
+import be.ehb.project.Repositroy.AuthorRepository;
+import be.ehb.project.Repositroy.BookRepository;
+import be.ehb.project.Repositroy.CategoryRepository;
 import be.ehb.project.model.Books;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.print.Book;
 import java.util.List;
 
 @RestController
@@ -17,7 +18,7 @@ public class BookController {
         private AuthorRepository authorService;
 
 
-    @Autowired
+     @Autowired
         public BookController(BookRepository bookService , CategoryRepository categoryService , AuthorRepository authorService ){
         this.bookService = bookService;
         this.categoryService = categoryService;
