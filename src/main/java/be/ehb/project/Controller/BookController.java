@@ -7,6 +7,7 @@ import be.ehb.project.Repositroy.CategoryRepository;
 import be.ehb.project.model.Books;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,13 +18,11 @@ public class BookController {
         private BookRepository bookService;
         private AuthorRepository authorService;
 
-
      @Autowired
         public BookController(BookRepository bookService , CategoryRepository categoryService , AuthorRepository authorService ){
         this.bookService = bookService;
         this.categoryService = categoryService;
         this.authorService = authorService;
-
 
     }
 

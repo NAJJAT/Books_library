@@ -8,13 +8,13 @@ public class Users {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int User_iD;
-    private String Username;
-    private String Firstname;
-    private String Lastname;
-    private String Email;
-    private String Password;
-    private String Phone;
-    private String Address;
+    private String username;
+    private String firstname;
+    private String surname;
+    private String email;
+    private String password;
+    private String phone;
+    private String address;
 
     @OneToMany(mappedBy = "user")
     private List<Loans> loans;
@@ -25,13 +25,13 @@ public class Users {
     //constructor
     public Users(int User_iD, String Username, String Firstname, String Lastname, String Email, String Password, String Phone, String Address) {
         this.User_iD = User_iD;
-        this.Username = Username;
-        this.Firstname = Firstname;
-        this.Lastname = Lastname;
-        this.Email = Email;
-        this.Password = Password;
-        this.Phone = Phone;
-        this.Address = Address;
+        this.username = Username;
+        this.firstname = Firstname;
+        this.surname = Lastname;
+        this.email = Email;
+        this.password = Password;
+        this.phone = Phone;
+        this.address = Address;
     }
     //getters and setters
     public int getUser_iD() {
@@ -43,59 +43,59 @@ public class Users {
     }
 
     public String getUsername() {
-        return Username;
+        return username;
     }
 
     public void setUsername(String username) {
-        Username = username;
+        this.username = username;
     }
 
     public String getFirstname() {
-        return Firstname;
+        return firstname;
     }
 
     public void setFirstname(String firstname) {
-        Firstname = firstname;
+        this.firstname = firstname;
     }
 
-    public String getLastname() {
-        return Lastname;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setLastname(String lastname) {
-        Lastname = lastname;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
     public String getPhone() {
-        return Phone;
+        return phone;
     }
 
     public void setPhone(String phone) {
-        Phone = phone;
+        this.phone = phone;
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
     public void setAddress(String address) {
-        Address = address;
+        this.address = address;
     }
 
 }

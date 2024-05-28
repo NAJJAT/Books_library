@@ -3,7 +3,6 @@ package be.ehb.project.Controller;
 import be.ehb.project.Repositroy.UserRepository;
 import be.ehb.project.model.Users;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,14 +42,10 @@ public class UserController {
         return userRepository.findAll();
     }
 
-    @GetMapping("/users/{password}")
-    public Users getUserByPassword(@PathVariable String password) {
-        return userRepository.findByPassword(password);
-    }
 
-    @GetMapping("/users/{name}")
-    public Users getUserByName(@PathVariable String name) {
-        return userRepository.findByName(name);
+    @GetMapping("/users/firstname/{firstname}")
+    public Users getUserByFirstname(@PathVariable String firstname) {
+        return userRepository.findByFirstname(firstname);
     }
 
     @GetMapping("/users/{surname}")
@@ -83,7 +78,7 @@ public class UserController {
         Users existingUser = userRepository.findById(id).orElse(null);
         if (existingUser != null) {
             existingUser.setFirstname(user.getUsername());
-            existingUser.setLastname(user.getLastname());
+            existingUser.setSurname(user.getSurname());
             existingUser.setEmail(user.getEmail());
             existingUser.setPassword(user.getPassword());
 
@@ -100,8 +95,8 @@ public class UserController {
 
     @PostMapping("/users/{name}")
     public void deleteUserByName(@PathVariable String name) {
-        if (userRepository.findByName(name) != null) {
-            userRepository.save(userRepository.findByName(name));
+        if (userRepository.findByFirstname(name) != null) {
+            userRepository.save(userRepository.findByFirstname(name));
         }
     }
 
@@ -118,7 +113,7 @@ public class UserController {
             userRepository.save(userRepository.findByEmail(email));
         }
     }
-
+/*
     @PostMapping("/users/register") // Consider a more descriptive endpoint
     public Users register(@RequestBody Users usermodel) {
 
@@ -143,6 +138,8 @@ public class UserController {
         return null;
 
     }
+
+    */
 }
 
 
