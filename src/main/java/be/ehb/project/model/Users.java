@@ -5,19 +5,20 @@ import jakarta.persistence.*;
 import java.util.List;
 @Entity
 public class Users {
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int User_iD;
-    private String username;
-    private String firstname;
-    private String surname;
-    private String email;
-    private String password;
-    private String phone;
-    private String address;
 
-    @OneToMany(mappedBy = "user")
-    private List<Loans> loans;
+           @Id
+           @GeneratedValue(strategy = GenerationType.IDENTITY)
+            private int User_iD;
+            private String username;
+            private String firstname;
+            private String surname;
+            private String email;
+            private String password;
+            private String phone;
+            private String address;
+    @ManyToOne
+    @JoinColumn(name = "bookId")
+    private Books booksid;
 
     //constructor
     public Users() {

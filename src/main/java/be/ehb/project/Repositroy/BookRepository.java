@@ -11,14 +11,15 @@ public interface BookRepository extends CrudRepository<Books, Integer> {
 
 
        Iterable<Books> findByCategory(Category category);
-
+/*
         Iterable<Books> findByAuthorsContaining(Authors author);
         //make findByLanguage method
         Iterable<Books> findByLanguage(String language);
 
+        Iterable<Books> findByTitle(String Title);
+
+        Iterable<Books> findByISBN(String ISBN);
+*/
 
 
-
-
-
-    }
+}

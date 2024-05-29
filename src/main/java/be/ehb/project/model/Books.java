@@ -10,6 +10,7 @@ import java.util.List;
 public class Books {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "book_id")
     private int Book_iD;
     private String Title;
     private String ISBN;
@@ -19,13 +20,10 @@ public class Books {
     @JoinColumn(name = "categoryId")
     private Category category;
 
-    @ManyToMany
-    @JoinTable(
-            name = "book_authors",
-            joinColumns = @JoinColumn(name = "bookId"),
-            inverseJoinColumns = @JoinColumn(name = "authorId")
-    )
-    private List<Authors> authors;
+    @ManyToOne
+    @JoinColumn(name = "authorId")
+    private Authors author;
+
 
     @OneToMany(mappedBy = "book")
     private List<Loans> loans;
