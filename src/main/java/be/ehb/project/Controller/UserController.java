@@ -12,16 +12,20 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class UserController {
     private UserRepository userRepository;
+}
+    /*
     private PasswordEncoder passwordEncoder;
-
-
-
+*/
+/*
     @Autowired
-    public UserController(UserRepository userRepository , PasswordEncoder passwordEncoder) {
+    public UserController(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }
+}
+*/
 
+/*
     @PostMapping("/register")
     public void register(@RequestBody Users user) {
          // make new user
@@ -53,7 +57,7 @@ public class UserController {
 
 
 
-
+*/
 
 
 

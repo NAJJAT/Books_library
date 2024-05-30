@@ -7,14 +7,16 @@ import be.ehb.project.Repositroy.CategoryRepository;
 import be.ehb.project.model.Books;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/books")
+@RequestMapping("/books")
 public class BookController {
     private CategoryRepository categoryService;
     private BookRepository bookService;
@@ -29,9 +31,20 @@ public class BookController {
     }
 
     //get all book in database
-    @GetMapping("/books/Allbooks")
-    public Iterable<Books> getAllBooks() {
-        return bookService.findAll();
+    @GetMapping("/books/all")
+    public ResponseEntity<List<Books>> getAllBooks() {
+        List<Books> books = new ArrayList<Books>();
+        return ResponseEntity.ok(books);
+    }
+
+    @PostMapping("/books/create")
+    public ResponseEntity<Books> createBook (@RequestBody Books book) {
+        //maake a new book
+        Books savedBook = bookService.save(book);
+        return ResponseEntity.ok(savedBook);
+
+
+
 
     }
 }

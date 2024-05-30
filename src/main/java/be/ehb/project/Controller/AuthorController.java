@@ -10,7 +10,7 @@ public class AuthorController {
 
         private AuthorRepository authorService;
 
-
+/*
         @Autowired
         public AuthorController(AuthorRepository authorService){
             this.authorService = authorService;
@@ -41,7 +41,7 @@ public class AuthorController {
             authorService.deleteById(id);
         }
 
-
+*/
 
 
 
