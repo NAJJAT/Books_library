@@ -36,6 +36,32 @@ public class BookController {
     }
 }
 /*
+    @Id
+    private Long id;
+
+    @NotNull
+    @Size(min = 2, max = 50)
+    private String name;
+
+    @Email
+    private String email;
+
+    @Min(18)
+    @Max(100)
+    private int age;
+
+    @NotBlank
+    private String username;
+
+    @NotEmpty
+    private String password;
+
+    @PositiveOrZero
+    private int balance;
+
+    @Past
+    private LocalDate dateOfBirth;
+/*
     //Zoeken op id
     @GetMapping("/books/{id}")
     public Books getBookById(@PathVariable int id) {
